@@ -5,13 +5,14 @@ This repository contains R scripts and datasets for performing differential expr
  Data
  
 **Raw Count Matrix**: GSE263594_raw_count_matrix.csv
-
 **Metadata (Sample Information)**: meta_data.csv
+**Differential Expression Results**: DEG_results_final.csv, Significant_DEGs.csv
 
-Differential Expression Results: DEG_results_final.csv, Significant_DEGs.csv
-nstallation & Dependencies
+**Installation & Dependencies**
+
 1️⃣ Install Required R Packages
 Make sure you have R and the required packages installed:
+
 install.packages(c("DESeq2", "ggplot2", "pheatmap", "dplyr"))
 Alternatively, use:
 install.packages("BiocManager")
