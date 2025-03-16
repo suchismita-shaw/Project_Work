@@ -1,81 +1,56 @@
-## RNA-Seq Differential Expression Analysis using DESeq2**
+# RNA-seq Differential Expression Analysis using DESeq2
 
-📌 **Overview**
-This repository contains R scripts and datasets for performing differential expression analysis of RNA-seq data using DESeq2. The analysis identifies upregulated and downregulated genes based on given conditions.
- Data
- 
-**Raw Count Matrix**: GSE263594_raw_count_matrix.csv
+## Overview
+This repository contains the R scripts and processed data for RNA-seq differential expression analysis using DESeq2. The project aims to identify upregulated and downregulated genes between experimental conditions.
 
-**Metadata (Sample Information)**: meta_data.csv
+## Data Description
+raw_counts.csv → Contains raw gene expression counts from RNA-seq.
 
-**Differential Expression Results**: DEG_results_final.csv, Significant_DEGs.csv
+metadata.csv → Contains sample conditions (e.g., Control, Treated).
 
-**Installation & Dependencies**
+DEG_results_final.csv → Contains results for all genes.
 
-1️⃣ Install Required R Packages
+Significant_DEGs.csv → Filtered differentially expressed genes (padj < 0.05).
 
-Make sure you have R and the required packages installed:
+## Requirements
+Ensure you have the following dependencies installed in R before running the analysis:
+```bash
+install.packages(c("ggplot2", "pheatmap", "dplyr", "DESeq2"))
+```
 
-install.packages(c("DESeq2", "ggplot2", "pheatmap", "dplyr"))
+### The analysis follows these steps:
 
-Alternatively, use:
-
-install.packages("BiocManager")
-
-BiocManager::install("DESeq2")
-
-The analysis follows these steps:
-
-**1️⃣ Preprocessing the Data**
+1️⃣ Preprocessing the Data
 
 Load raw count matrix (GSE263594_raw_count_matrix.csv)
-
 Load sample metadata (meta_data.csv)
-
 Ensure row and column names match
 
-**2️⃣ Differential Expression Analysis with DESeq2**
+2️⃣ Differential Expression Analysis with DESeq2
 
 Create DESeq2 dataset
-
 Normalize and perform differential expression analysis
-
 Extract upregulated and downregulated genes
 
-**3️⃣ Results & Visualization**
+3️⃣ Results & visualization
 
-**Save results** (DEG_results_final.csv)
-
+Save results (DEG_results_final.csv)
 Generate a Volcano Plot and MA Plot for visualization
 
-**Example Results**
+## 📊 Example Results
 
+### 1️⃣ Top Upregulated Genes
+
+```bash
 head(res_df[order(-res_df$log2FoldChange), ], 10)
+```
 
-**Top Downregulated Genes**
+###  2️⃣ Top Downregulated Genes
 
+```bash
 head(res_df[order(res_df$log2FoldChange), ], 10)
-
-Volcano Plot
-
-library(ggplot2)
-
-ggplot(res_df, aes(x = log2FoldChange, y = -log10(padj), color = Regulation)) +
-
-  geom_point(alpha = 0.6) +
-  
-  scale_color_manual(values = c("Upregulated" = "red", "Downregulated" = "blue", "Not Significant" = "gray")) +
-  
-  theme_minimal() +
-  
-  labs(title = "Volcano Plot of Differentially Expressed Genes",
-  
-       x = "Log2 Fold Change",
-       
-       y = "-Log10 Adjusted p-value")
-
-       
-**Contact**
+```
+## 📩 Contact
 If you have any questions or suggestions, feel free to open an issue or reach out!
 
-📧 **Email**: suchismita10.shaw@gmail.com
+📧 Email: suchismita10.shaw@gmail.com 
