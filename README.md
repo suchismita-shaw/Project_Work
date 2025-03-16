@@ -1,9 +1,13 @@
 **RNA-Seq Differential Expression Analysis using DESeq2**
+
 📌 **Overview**
 This repository contains R scripts and datasets for performing differential expression analysis of RNA-seq data using DESeq2. The analysis identifies upregulated and downregulated genes based on given conditions.
  Data
-Raw Count Matrix: GSE263594_raw_count_matrix.csv
-Metadata (Sample Information): meta_data.csv
+ 
+**Raw Count Matrix**: GSE263594_raw_count_matrix.csv
+
+**Metadata (Sample Information)**: meta_data.csv
+
 Differential Expression Results: DEG_results_final.csv, Significant_DEGs.csv
 nstallation & Dependencies
 1️⃣ Install Required R Packages
